@@ -1,0 +1,9 @@
+# name | gen args (W H PAGES PTW PTH) | options
+# Expected output for each case is tests/fixtures/<name>.tspl.gz, recorded from the
+# vendor's x86_64 rastertolabel filter by tests/record-fixtures.sh.
+4x6-defaults     | 812 1218 1 288 432 |
+4x6-two-pages    | 812 1218 2 288 432 |
+odd-width        | 457 300 1 162 106  |
+all-options      | 812 1218 1 288 432 | Darkness=12 zePrintRate=2 Rotate=1 zeMediaTracking=BLine GapOrMarkHeight=5 GapOrMarkOffset=2 AdjustHoriaontal=-3 AdjustVertical=4 FeedOffset=-2 AutoDotted=1
+printer-defaults | 457 300 1 162 106  | Darkness=Default zePrintRate=Default zeMediaTracking=Continuous
+option-extremes  | 576 400 1 203 142  | zeMediaTracking=Gap GapOrMarkHeight=10 GapOrMarkOffset=10 AdjustHoriaontal=20 AdjustVertical=-20 FeedOffset=20 Darkness=0 zePrintRate=8 AutoDotted=0

@@ -1,0 +1,12 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: make
+      - run: make test
+      - name: Check committed PPD is up to date
+        run: make -B ppd/rastertotspl.ppd && git diff --exit-code ppd/rastertotspl.ppd
+      - run: file build/rastertotspl
